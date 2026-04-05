@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엄마를 위한 배당주 투자 가이드</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FFF8F0;
+  --peach: #FFE8D6;
+  --coral: #FF8A6C;
+  --deep-coral: #E85D3A;
+  --forest: #2D5016;
+  --sage: #7BA05B;
+  --sage-light: #E8F0E0;
+  --charcoal: #2C2C2C;
+  --warm-gray: #6B6560;
+  --gold: #D4A853;
+  --gold-light: #FFF3DC;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.8;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--forest) 0%, #3A6B1E 50%, var(--sage) 100%);
+  color: var(--white);
+  padding: 80px 24px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 20%, rgba(212,168,83,0.15) 0%, transparent 40%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-20px, 15px) rotate(2deg); }
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 6px 20px;
+  border-radius: 50px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.hero h1 {
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.hero p {
+  font-size: 16px;
+  opacity: 0.9;
+  font-weight: 300;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* SECTION */
+.section {
+  padding: 56px 0;
+}
+
+.section-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--forest);
+  color: var(--white);
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(22px, 4.5vw, 30px);
+  font-weight: 900;
+  color: var(--forest);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: var(--warm-gray);
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+/* DIVIDER */
+.divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--peach), transparent);
+}
+
+/* CARD GRID */
+.card-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.card-grid.cols-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.card-grid.cols-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+@media (max-width: 600px) {
+  .card-grid.cols-2, .card-grid.cols-3 { grid-template-columns: 1fr; }
+}
+
+/* CARDS */
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+/* HIGHLIGHT CARD */
+.highlight-card {
+  background: linear-gradient(135deg, var(--sage-light) 0%, var(--gold-light) 100%);
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid rgba(123,160,91,0.2);
+}
+
+.highlight-card h3 {
+  font-size: 18px;
+  color: var(--forest);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.highlight-card p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--charcoal);
+}
+
+/* COMPARISON TABLE */
+.compare-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  font-size: 14px;
+}
+
+.compare-table thead th {
+  background: var(--forest);
+  color: var(--white);
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.compare-table tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0ece8;
+  background: var(--white);
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.compare-table tbody tr:last-child td { border-bottom: none; }
+
+.compare-table tbody tr:hover td { background: #fdfcfa; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 32px; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--sage), var(--gold));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -26px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background: var(--white);
+  border: 3px solid var(--sage);
+  border-radius: 50%;
+}
+
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--coral);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.timeline-desc {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+/* STOCK LIST */
+.stock-category {
+  margin-bottom: 24px;
+}
+
+.stock-category-title {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.stock-category-title.kr { background: var(--sage-light); color: var(--forest); }
+.stock-category-title.us { background: var(--gold-light); color: #8B6914; }
+.stock-category-title.etf { background: #EDE4F5; color: #5B2D8E; }
+
+.stock-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stock-chip {
+  background: var(--white);
+  border: 1px solid #e8e4e0;
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: border-color 0.2s;
+  min-width: 130px;
+  flex: 1;
+}
+
+.stock-chip:hover { border-color: var(--sage); }
+
+.stock-chip .name { font-weight: 700; color: var(--charcoal); font-size: 14px; }
+.stock-chip .detail { color: var(--warm-gray); font-size: 12px; }
+
+/* RULE CARDS */
+.rule-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.2s;
+}
+
+.rule-card:hover { transform: translateX(4px); }
+
+.rule-num {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--forest), var(--sage));
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.rule-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.rule-content p {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+/* WARNING BOX */
+.warning-box {
+  background: #FFF5F3;
+  border-left: 4px solid var(--coral);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin-top: 24px;
+}
+
+.warning-box h4 {
+  color: var(--deep-coral);
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.warning-box p {
+  font-size: 14px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+/* TIP BOX */
+.tip-box {
+  background: var(--sage-light);
+  border-left: 4px solid var(--sage);
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px;
+  margin-top: 20px;
+}
+
+.tip-box h4 {
+  color: var(--forest);
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.tip-box p {
+  font-size: 14px;
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+/* FORMULA */
+.formula-box {
+  background: var(--charcoal);
+  color: var(--white);
+  border-radius: 14px;
+  padding: 24px 28px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.formula-box .label {
+  font-size: 12px;
+  opacity: 0.6;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.formula-box .formula {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.formula-box .example {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta-section {
+  background: linear-gradient(135deg, var(--forest) 0%, #3A6B1E 100%);
+  color: var(--white);
+  padding: 48px 24px;
+  text-align: center;
+  border-radius: 0;
+}
+
+.cta-section h2 {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.cta-section p {
+  font-size: 15px;
+  opacity: 0.85;
+  max-width: 500px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+}
+
+/* CHECKLIST */
+.checklist { list-style: none; }
+
+.checklist li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0ece8;
+  font-size: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.6;
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.check-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background: var(--sage-light);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--forest);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 12px;
+  color: var(--warm-gray);
+  line-height: 1.7;
+}
+
+.footer strong { color: var(--deep-coral); }
+
+/* PROSE */
+.prose { font-size: 15px; line-height: 1.85; color: #4a4540; }
+.prose strong { color: var(--charcoal); font-weight: 700; }
+
+/* BADGE LIST */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.green { background: var(--sage-light); color: var(--forest); }
+.badge.gold { background: var(--gold-light); color: #8B6914; }
+.badge.coral { background: #FFE8E0; color: var(--deep-coral); }
+
+/* TIER SYSTEM */
+.tier-card {
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.tier-card:hover { transform: translateY(-2px); }
+.tier-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 5px; height: 100%;
+}
+.tier-card.king { background: linear-gradient(135deg, #FFF8E7, #FFF1CC); }
+.tier-card.king::before { background: linear-gradient(to bottom, #D4A853, #B8860B); }
+.tier-card.aristocrat { background: linear-gradient(135deg, #F0F4FF, #E4ECFF); }
+.tier-card.aristocrat::before { background: linear-gradient(to bottom, #4A6FA5, #2D4A7A); }
+.tier-card.champion { background: linear-gradient(135deg, #F0FFF0, #E0F5E0); }
+.tier-card.champion::before { background: linear-gradient(to bottom, var(--sage), var(--forest)); }
+.tier-card.bluechip { background: linear-gradient(135deg, #FFF5F0, #FFE8DE); }
+.tier-card.bluechip::before { background: linear-gradient(to bottom, var(--coral), var(--deep-coral)); }
+
+.tier-header { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.tier-icon { font-size: 28px; }
+.tier-name { font-size: 20px; font-weight: 900; color: var(--charcoal); }
+.tier-eng { font-size: 12px; font-weight: 600; letter-spacing: 1px; opacity: 0.5; text-transform: uppercase; }
+.tier-criteria {
+  font-size: 14px; color: var(--warm-gray); margin-bottom: 16px;
+  padding-bottom: 14px; border-bottom: 1px dashed rgba(0,0,0,0.1); line-height: 1.6;
+}
+.tier-criteria strong { color: var(--charcoal); }
+.tier-stocks { display: flex; flex-wrap: wrap; gap: 8px; }
+.tier-stock {
+  background: rgba(255,255,255,0.75); border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px; padding: 10px 14px; font-size: 13px;
+  min-width: 155px; flex: 1; backdrop-filter: blur(4px);
+}
+.tier-stock .ts-name { font-weight: 700; color: var(--charcoal); font-size: 14px; }
+.tier-stock .ts-ticker { font-size: 11px; color: var(--warm-gray); font-weight: 600; letter-spacing: 0.5px; }
+.tier-stock .ts-desc { font-size: 12px; color: var(--warm-gray); margin-top: 2px; }
+.tier-stock .ts-years {
+  display: inline-block; font-size: 11px; font-weight: 700;
+  padding: 1px 8px; border-radius: 10px; margin-top: 4px;
+}
+.tier-card.king .ts-years { background: #F5E6C4; color: #8B6914; }
+.tier-card.aristocrat .ts-years { background: #D6E2F5; color: #2D4A7A; }
+.tier-card.champion .ts-years { background: #D0E8D0; color: var(--forest); }
+.tier-card.bluechip .ts-years { background: #FFD6C4; color: #A04420; }
+
+.tier-pyramid {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 28px 0;
+}
+.pyramid-row {
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 10px 0; font-weight: 700; font-size: 13px;
+  text-align: center; color: var(--white); line-height: 1.4;
+}
+.pyramid-row.p1 { width: 45%; background: linear-gradient(135deg, #B8860B, #D4A853); }
+.pyramid-row.p2 { width: 60%; background: linear-gradient(135deg, #2D4A7A, #4A6FA5); }
+.pyramid-row.p3 { width: 75%; background: linear-gradient(135deg, var(--forest), var(--sage)); }
+.pyramid-row.p4 { width: 90%; background: linear-gradient(135deg, var(--deep-coral), var(--coral)); }
+.pyramid-label { font-size: 11px; opacity: 0.8; font-weight: 400; }
+
+/* ACCORDION */
+.accordion-toggle {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  width: 100%; padding: 10px 0 4px; margin-top: 14px;
+  border: none; background: none; cursor: pointer;
+  font-size: 13px; font-weight: 600; color: var(--warm-gray);
+  border-top: 1px dashed rgba(0,0,0,0.1);
+  transition: color 0.2s;
+}
+.accordion-toggle:hover { color: var(--forest); }
+.accordion-toggle .arrow { transition: transform 0.3s; display: inline-block; }
+.accordion-toggle.open .arrow { transform: rotate(180deg); }
+.accordion-body {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease;
+  margin-top: 0;
+}
+.accordion-body.open { max-height: 800px; }
+.accordion-list {
+  font-size: 13px; color: var(--warm-gray); line-height: 2;
+  padding: 10px 0 4px; column-count: 2; column-gap: 20px;
+}
+@media (max-width: 500px) { .accordion-list { column-count: 1; } }
+.accordion-list span { color: var(--charcoal); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">2부 · 실전편</span>
+    <h1>내 첫 <em>배당주</em> 고르기</h1>
+    <p>개념은 익혔으니 이제 직접 골라볼 차례!<br>인기 배당주, ETF 분석, 고르는 법칙, 복리의 마법까지<br>실전에 바로 쓸 수 있는 가이드예요.</p>
+  </div>
+</div>
+
+<div class="container">
+  <hr class="divider">
+
+  <!-- SECTION 4: 인기 배당주 -->
+  <div class="section">
+    <span class="section-number">1</span>
+    <h2 class="section-title">엄마들이 관심 많은 인기 배당주</h2>
+    <p class="section-subtitle">2026년 기준, 초보자에게 친숙한 배당주들이에요</p>
+
+    <div class="stock-category">
+      <span class="stock-category-title kr">🇰🇷 국내 인기 배당주</span>
+      <div class="stock-list">
+        <div class="stock-chip">
+          <span class="name">삼성전자 (우)</span>
+          <span class="detail">대한민국 대표 반도체 기업</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">KB금융</span>
+          <span class="detail">국내 1위 금융지주</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">하나금융지주</span>
+          <span class="detail">안정적 배당 은행주</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">SK텔레콤</span>
+          <span class="detail">통신 대표주 · 꾸준한 배당</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">KT&G</span>
+          <span class="detail">소비재 · 고배당 대표주</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">맥쿼리인프라</span>
+          <span class="detail">인프라 투자 · 반기 배당</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-category">
+      <span class="stock-category-title us">🇺🇸 미국 인기 배당주</span>
+      <div class="stock-list">
+        <div class="stock-chip">
+          <span class="name">마이크로소프트</span>
+          <span class="detail">AI 시대 빅테크 · 배당 성장</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">스타벅스</span>
+          <span class="detail">친숙한 브랜드 · 분기 배당</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">리얼티 인컴</span>
+          <span class="detail">부동산 리츠 · 매월 배당</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">코카콜라</span>
+          <span class="detail">60년+ 연속 배당 인상</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">존슨앤존슨</span>
+          <span class="detail">헬스케어 · 배당 귀족주</span>
+        </div>
+        <div class="stock-chip">
+          <span class="name">셰브론</span>
+          <span class="detail">에너지 대표 · 고배당</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stock-category">
+      <span class="stock-category-title etf">📦 초보자 추천 배당 ETF — 상세 분석</span>
+    </div>
+
+    <!-- SCHD -->
+    <div class="card" style="margin-bottom:14px;">
+      <h3 style="margin-bottom:4px;">SCHD <span style="font-size:12px;color:var(--warm-gray);font-weight:400;">Schwab U.S. Dividend Equity ETF</span></h3>
+      <div class="badge-row"><span class="badge green">배당수익률 약 3.4%</span><span class="badge gold">보수 0.06%</span><span class="badge coral">분기 배당</span></div>
+      <p style="font-size:14px;color:var(--warm-gray);line-height:1.7;margin-top:10px;">
+        <strong>왜 추천?</strong> 10년 이상 연속 배당을 지급한 기업 중, 현금흐름·ROE·배당성장률이 우수한 <strong>약 100개 종목을 엄선</strong>해요. "배당의 질"을 따지는 ETF라서 초보자의 첫 배당 ETF로 가장 많이 추천돼요.
+      </p>
+      <p style="font-size:13px;color:var(--charcoal);margin-top:8px;"><strong>주요 편입 종목:</strong> 애브비(ABBV), 셰브론(CVX), 코노코필립스(COP), P&G(PG), 퀄컴(QCOM), 유나이티드헬스(UNH), 코카콜라(KO), 애보트(ABT) 등</p>
+      <p style="font-size:12px;color:var(--warm-gray);margin-top:6px;">⚠️ 에너지·필수소비재 비중이 높아 기술주 강세장에선 상대적으로 뒤처질 수 있어요. 2025년 수익률은 S&P500 대비 저조했어요.</p>
+    </div>
+
+    <!-- VYM -->
+    <div class="card" style="margin-bottom:14px;">
+      <h3 style="margin-bottom:4px;">VYM <span style="font-size:12px;color:var(--warm-gray);font-weight:400;">Vanguard High Dividend Yield ETF</span></h3>
+      <div class="badge-row"><span class="badge green">배당수익률 약 2.3%</span><span class="badge gold">보수 0.04%</span><span class="badge coral">분기 배당</span></div>
+      <p style="font-size:14px;color:var(--warm-gray);line-height:1.7;margin-top:10px;">
+        <strong>왜 추천?</strong> 평균 이상 배당 수익률을 가진 미국 대형주 <strong>565개 이상에 초광범위 분산</strong>하는 ETF예요. 특정 섹터 쏠림 없이 가장 넓게 퍼지므로 "한 종목에서 문제가 생겨도 안전한" 구조예요. 보수도 0.04%로 최저 수준이에요.
+      </p>
+      <p style="font-size:13px;color:var(--charcoal);margin-top:8px;"><strong>주요 편입 종목:</strong> 브로드컴(AVGO), JP모건(JPM), 엑슨모빌(XOM), 뱅크오브아메리카(BAC), P&G(PG), 골드만삭스(GS) 등</p>
+      <p style="font-size:12px;color:var(--warm-gray);margin-top:6px;">⚠️ 배당수익률은 SCHD보다 낮지만, 시가총액 가중 방식이라 브로드컴·JP모건 같은 대형 우량주 비중이 높아 주가 상승 여력이 있어요.</p>
+    </div>
+
+    <!-- ACE 미국배당다우존스 -->
+    <div class="card" style="margin-bottom:14px;">
+      <h3 style="margin-bottom:4px;">ACE 미국배당다우존스 <span style="font-size:12px;color:var(--warm-gray);font-weight:400;">한국판 SCHD</span></h3>
+      <div class="badge-row"><span class="badge green">월배당!</span><span class="badge gold">ISA·연금 계좌 OK</span><span class="badge coral">원화 투자</span></div>
+      <p style="font-size:14px;color:var(--warm-gray);line-height:1.7;margin-top:10px;">
+        <strong>왜 추천?</strong> SCHD와 <strong>동일한 지수(다우존스 미국 배당 100)</strong>를 추종하면서 국내 상장이라 ISA·연금저축 계좌에서 <strong>세금 혜택</strong>까지 받을 수 있어요. SCHD는 분기 배당이지만 이건 월배당이에요!
+      </p>
+      <p style="font-size:13px;color:var(--charcoal);margin-top:8px;"><strong>편입 종목:</strong> SCHD와 동일 (애브비, 셰브론, 코노코필립스 등)</p>
+      <p style="font-size:12px;color:var(--warm-gray);margin-top:6px;">💡 SOL·TIGER·KODEX에서도 동일 지수 ETF가 있어요 (솔미당, 타미당, 코미당으로 불려요)</p>
+    </div>
+
+    <!-- S&P500 참고 박스 (배당 ETF와 분리) -->
+    <div style="margin-top:24px;background:linear-gradient(135deg, #F8F6FF 0%, #F0EDFF 100%);border-radius:16px;padding:24px;border:1px solid rgba(90,60,180,0.1);">
+      <p style="font-size:12px;font-weight:700;color:#7C5CBF;letter-spacing:1px;margin-bottom:6px;">📎 배당 ETF는 아니지만, 함께 알아두면 좋은 ETF</p>
+      <h3 style="margin-bottom:4px;font-size:17px;">TIGER 미국S&P500 <span style="font-size:12px;color:var(--warm-gray);font-weight:400;">미국 시장 전체에 투자</span></h3>
+      <div class="badge-row"><span class="badge" style="background:#EDE4FF;color:#5B2D8E;">성장 중심</span><span class="badge gold">ISA·연금 계좌 OK</span><span class="badge coral">원화 투자</span></div>
+      <p style="font-size:14px;color:var(--warm-gray);line-height:1.7;margin-top:10px;">
+        이건 배당 ETF가 아니에요! 배당수익률은 약 1.2%로 낮지만, <strong>미국 상위 500개 기업</strong>(애플·엔비디아·아마존 등)에 한 번에 투자해서 <strong>주가 성장</strong>을 노리는 ETF예요. "배당 ETF로 안정적 현금흐름 + S&P500 ETF로 장기 성장"을 섞으면 균형 잡힌 포트폴리오가 돼요.
+      </p>
+      <p style="font-size:12px;color:var(--warm-gray);margin-top:6px;">💡 S&P500 지수는 10년 이상 보유 시 역사적으로 손실 확률이 0%에 수렴해요. 매월 적립식 투자에 최적!</p>
+    </div>
+
+    <!-- 고배당주 리스트 -->
+    <div style="margin-top:32px;">
+      <h3 style="font-size:18px;font-weight:900;color:var(--forest);margin-bottom:6px;">📊 고배당주 리스트</h3>
+      <p style="font-size:13px;color:var(--warm-gray);margin-bottom:16px;">배당금은 <strong>2025년 결산 기준</strong>(가장 최근 확정 데이터)이 정석이에요. 여기에 <strong>2026년 2월 말 주가</strong>를 함께 적어서 현재 기준 배당수익률을 계산했어요.</p>
+
+      <p style="font-size:14px;font-weight:700;color:var(--forest);margin-bottom:4px;">🇰🇷 국내 고배당주 TOP 8</p>
+      <p style="font-size:12px;color:var(--warm-gray);margin-bottom:8px;">📌 배당금: 2025년 결산 기준 (가장 최근 확정치) · 주가: 2026년 2월 말 기준</p>
+      <table class="compare-table" style="margin-bottom:20px;">
+        <thead>
+          <tr><th>종목명</th><th>업종</th><th>주당 배당금<br><span style="font-size:10px;font-weight:400;">(25년 결산)</span></th><th>주가<br><span style="font-size:10px;font-weight:400;">(26.2월 말)</span></th><th>배당수익률</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>포스코홀딩스</strong></td><td>철강/소재</td><td>18,000원</td><td>~394,000원</td><td>~4.6%</td></tr>
+          <tr><td><strong>KT&G</strong></td><td>담배/소비재</td><td>6,800원</td><td>~158,000원</td><td>~4.3%</td></tr>
+          <tr><td><strong>하나금융지주</strong></td><td>금융</td><td>3,600원</td><td>~82,000원</td><td>~4.4%</td></tr>
+          <tr><td><strong>기업은행</strong></td><td>금융</td><td>1,060원</td><td>~16,000원</td><td>~6.6%</td></tr>
+          <tr><td><strong>우리금융지주</strong></td><td>금융</td><td>1,200원</td><td>~19,500원</td><td>~6.2%</td></tr>
+          <tr><td><strong>한국쉘석유</strong></td><td>에너지</td><td>10,000원</td><td>~155,000원</td><td>~6.5%</td></tr>
+          <tr><td><strong>맥쿼리인프라</strong></td><td>인프라펀드</td><td>780원</td><td>~12,500원</td><td>~6.2%</td></tr>
+          <tr><td><strong>삼성화재</strong></td><td>보험</td><td>19,000원</td><td>~380,000원</td><td>~5.0%</td></tr>
+        </tbody>
+      </table>
+
+      <p style="font-size:14px;font-weight:700;color:#8B6914;margin-bottom:4px;">🇺🇸 미국 고배당주 TOP 8</p>
+      <p style="font-size:12px;color:var(--warm-gray);margin-bottom:8px;">📌 배당금: 최근 12개월(TTM) 기준 · 주가: 2026년 2월 말 기준</p>
+      <table class="compare-table" style="margin-bottom:20px;">
+        <thead>
+          <tr><th>종목명 (티커)</th><th>업종</th><th>연간 배당금<br><span style="font-size:10px;font-weight:400;">(TTM)</span></th><th>주가<br><span style="font-size:10px;font-weight:400;">(26.2월 말)</span></th><th>배당수익률</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>알트리아 (MO)</strong></td><td>담배</td><td>$4.08</td><td>~$59</td><td>~6.9%</td></tr>
+          <tr><td><strong>화이자 (PFE)</strong></td><td>제약</td><td>$1.68</td><td>~$27</td><td>~6.2%</td></tr>
+          <tr><td><strong>리얼티 인컴 (O)</strong></td><td>부동산 리츠</td><td>$3.16</td><td>~$57</td><td>~5.5%</td></tr>
+          <tr><td><strong>AT&T (T)</strong></td><td>통신</td><td>$1.11</td><td>~$28</td><td>~4.0%</td></tr>
+          <tr><td><strong>셰브론 (CVX)</strong></td><td>에너지</td><td>$6.52</td><td>~$155</td><td>~4.2%</td></tr>
+          <tr><td><strong>존슨앤존슨 (JNJ)</strong></td><td>헬스케어</td><td>$4.96</td><td>~$155</td><td>~3.2%</td></tr>
+          <tr><td><strong>코카콜라 (KO)</strong></td><td>음료</td><td>$2.04</td><td>~$73</td><td>~2.8%</td></tr>
+          <tr><td><strong>P&G (PG)</strong></td><td>생활용품</td><td>$4.03</td><td>~$170</td><td>~2.4%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warning-box">
+      <h4>⚠️ 주의사항</h4>
+      <p>위 종목과 수치는 <strong>배당금: 2025년 결산 확정치 · 주가: 2026년 2월 말 기준</strong>이며, 특정 종목 매수를 추천하는 것이 아니에요. 주가·배당금·배당수익률은 시장 상황에 따라 수시로 변동됩니다. 주가가 오르면 배당수익률은 낮아지고, 주가가 떨어지면 높아져요 — 반드시 기업 실적을 함께 확인하세요.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <hr class="divider">
+  <hr class="divider">
+
+  <!-- SECTION 6: 좋은 배당주 고르는 법 -->
+  <div class="section">
+    <span class="section-number">2</span>
+    <h2 class="section-title">좋은 배당주 고르는 5가지 법칙</h2>
+    <p class="section-subtitle">이것만 기억하면 실패 확률이 줄어요</p>
+
+    <div class="rule-card">
+      <div class="rule-num">1</div>
+      <div class="rule-content">
+        <h4>배당수익률만 보지 마세요 — "왜 높은지"가 핵심</h4>
+        <p>배당수익률이 높다고 무조건 좋은 게 아니에요. <strong>주가가 크게 떨어져서</strong> 수익률이 높아 보이는 경우가 많아요.</p>
+        <p style="margin-top:8px;font-size:13px;background:#FFF5F0;padding:10px 14px;border-radius:10px;"><strong>⚡ 실전 예시:</strong> 화이자(PFE)는 코로나 이후 주가가 $55→$27로 반토막 나면서 배당수익률이 6%대로 올랐어요. 수익률이 높아 보이지만 사실은 주가 하락의 결과예요. 반면 코카콜라(KO)는 수익률 2.8%로 낮아 보여도 62년 연속 배당을 올렸고 주가도 꾸준히 우상향 — 이게 진짜 좋은 배당주예요.</p>
+      </div>
+    </div>
+
+    <div class="rule-card">
+      <div class="rule-num">2</div>
+      <div class="rule-content">
+        <h4>배당 성장 이력을 확인하세요 — "올려왔는가"가 중요</h4>
+        <p><strong>최소 5년 이상 꾸준히</strong> 배당을 지급하고, 배당금을 점점 올려온 기업이 좋아요.</p>
+        <p style="margin-top:8px;font-size:13px;background:#F0FFF0;padding:10px 14px;border-radius:10px;"><strong>⚡ 실전 예시:</strong> P&G(PG)는 68년 연속 배당 인상! 10년 전 주당 $2.57이던 배당금이 지금은 $4.03으로 57% 올랐어요. 만약 10년 전에 샀다면 내가 산 가격 기준 배당수익률이 갈수록 높아지는 "마법"이 생겨요. 반면 2024년 3M(MMM)은 66년간 지키던 배당킹 자격을 배당 삭감으로 잃었어요 — 실적 악화 신호를 미리 봤어야 했죠.</p>
+      </div>
+    </div>
+
+    <div class="rule-card">
+      <div class="rule-num">3</div>
+      <div class="rule-content">
+        <h4>배당성향 40~70%가 적정 — "무리하는 건 아닌지" 체크</h4>
+        <p>배당성향은 "번 돈 중 배당으로 얼마나 주는가"예요. 이 수치가 너무 높으면 위험 신호예요.</p>
+        <p style="margin-top:8px;font-size:13px;background:#FFF8E7;padding:10px 14px;border-radius:10px;"><strong>⚡ 실전 예시:</strong> KT&G의 배당성향은 약 60%로 적정 수준이에요 — 번 돈의 60%를 주주에게 돌려주고 40%는 사업에 재투자해요. 반면 과거 레깃앤플랫(LEG)은 배당성향이 100%를 넘었어요(번 돈보다 더 많이 배당). 결국 2024년 배당을 대폭 삭감했고 주가도 급락했어요.</p>
+      </div>
+    </div>
+
+    <div class="rule-card">
+      <div class="rule-num">4</div>
+      <div class="rule-content">
+        <h4>회사의 돈 벌 능력을 보세요 — "이익이 꾸준한가"</h4>
+        <p>매출과 이익이 <strong>꾸준히 성장</strong>하는 회사, 부채가 과도하지 않은 회사를 골라야 해요.</p>
+        <p style="margin-top:8px;font-size:13px;background:#F0F4FF;padding:10px 14px;border-radius:10px;"><strong>⚡ 실전 예시:</strong> 삼성화재는 보험업 특성상 현금흐름이 풍부하고, 매년 1조 원 이상 순이익을 안정적으로 벌어요 → 배당도 꾸준해요. 반면 월그린스(WBA)는 매년 적자가 커지면서 2024년 48년 만에 배당을 90% 삭감했어요. <strong>"돈을 꾸준히 버는가"</strong>가 배당 지속의 핵심이에요.</p>
+      </div>
+    </div>
+
+    <div class="rule-card">
+      <div class="rule-num">5</div>
+      <div class="rule-content">
+        <h4>한 종목에 올인하지 마세요 — "분산이 보험"</h4>
+        <p>아무리 좋은 배당주여도 <strong>여러 종목·섹터에 분산</strong>하는 게 안전해요.</p>
+        <p style="margin-top:8px;font-size:13px;background:#F5F0FF;padding:10px 14px;border-radius:10px;"><strong>⚡ 실전 전략:</strong> "금융주(KB금융) + 통신주(SK텔레콤) + 소비재(KT&G) + 미국 ETF(SCHD)"처럼 섹터를 섞으세요. 2024년 에너지 가격이 급락했을 때 셰브론(CVX) 주가가 빠졌지만, 같은 기간 헬스케어·IT 배당주는 오히려 올랐어요. 한 바구니에 달걀을 담지 않는 게 투자의 기본이에요!</p>
+      </div>
+    </div>
+
+    <div class="formula-box">
+      <div class="label">배당성향 계산법</div>
+      <div class="formula">주당 배당금 ÷ 주당순이익(EPS) × 100</div>
+      <div class="example">예) 배당금 1,000원 ÷ EPS 2,500원 = 배당성향 40% → 적정 수준!</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <hr class="divider">
+
+  <!-- SECTION 8: 시작 체크리스트 -->
+  <div class="section">
+    <span class="section-number">3</span>
+    <h2 class="section-title">배당 투자 시작 체크리스트</h2>
+    <p class="section-subtitle">오늘부터 바로 따라할 수 있어요</p>
+
+    <div class="card" style="padding: 28px;">
+      <ul class="checklist">
+        <li>
+          <span class="check-icon">✓</span>
+          <span>증권사 앱 설치하고 <strong>비대면 계좌 개설</strong>하기 (MTS 앱 추천)</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span><strong>ISA 계좌 또는 연금저축 계좌</strong>도 함께 개설해서 절세 준비하기</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>관심 있는 배당주의 <strong>최근 5년 배당 이력</strong> 확인하기 (DART, 네이버 금융)</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>처음엔 <strong>소액(월 10~30만 원)</strong>으로 시작, 배당 ETF부터 경험해보기</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>배당 기준일과 배당락일 <strong>캘린더에 미리 메모</strong>해두기</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>받은 배당금은 <strong>재투자(DRIP)</strong>해서 복리 효과 극대화하기</span>
+        </li>
+        <li>
+          <span class="check-icon">✓</span>
+          <span>최소 <strong>3개 이상 종목에 분산</strong>투자하고, 반기마다 점검하기</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<!-- CTA -->
+<div class="cta-section">
+  <h2>🌿 아이의 20년 뒤를 위한 첫 투자</h2>
+  <p>매월 30만 원씩 배당 ETF에 20년간 투자하면<br>연 8% 수익률 기준 약 <strong style="color:var(--gold);font-size:20px;">1억 7,669만 원</strong>이 될 수 있어요.</p>
+</div>
+
+<div class="container">
+  <div class="section" style="padding-top:36px;">
+    <h3 style="font-size:18px;font-weight:900;color:var(--forest);margin-bottom:16px;">🧮 이 숫자, 어떻게 나온 걸까? — 복리 계산 과정</h3>
+
+    <div class="highlight-card" style="margin-bottom:20px;">
+      <h3>적립식 복리 공식 (FV of Annuity)</h3>
+      <p style="font-size:14px;line-height:1.8;">
+        <strong>FV = PMT × [(1 + r)ⁿ − 1] ÷ r</strong><br><br>
+        <strong>PMT</strong> = 매월 투자금 = 30만 원<br>
+        <strong>r</strong> = 월 수익률 = 8% ÷ 12 = <strong>0.6667%</strong> (0.006667)<br>
+        <strong>n</strong> = 총 투자 횟수 = 20년 × 12개월 = <strong>240회</strong>
+      </p>
+    </div>
+
+    <div class="formula-box">
+      <div class="label">실제 계산 과정</div>
+      <div class="formula" style="font-size:16px;">300,000 × [(1.006667)²⁴⁰ − 1] ÷ 0.006667</div>
+      <div class="example" style="text-align:left;margin-top:14px;line-height:2;">
+        ① (1.006667)²⁴⁰ = <strong>4.9268</strong> ← 복리의 마법!<br>
+        ② 4.9268 − 1 = <strong>3.9268</strong><br>
+        ③ 3.9268 ÷ 0.006667 = <strong>588.96</strong><br>
+        ④ 300,000 × 588.96 = <strong>약 1억 7,669만 원</strong>
+      </div>
+    </div>
+
+    <table class="compare-table" style="margin-top:20px;">
+      <thead>
+        <tr><th>구분</th><th>금액</th><th>비중</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>내가 넣은 원금</strong></td><td>30만 원 × 240개월 = <strong>7,200만 원</strong></td><td>41%</td></tr>
+        <tr><td><strong>복리 수익 (이자의 이자)</strong></td><td><strong>약 1억 469만 원</strong></td><td>59%</td></tr>
+        <tr><td style="background:var(--sage-light);"><strong>합계</strong></td><td style="background:var(--sage-light);"><strong>약 1억 7,669만 원</strong></td><td style="background:var(--sage-light);"><strong>100%</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box" style="margin-top:20px;">
+      <h4>💡 핵심 포인트: 수익의 59%가 "이자의 이자"</h4>
+      <p>내가 직접 넣은 돈은 7,200만 원이지만, <strong>복리 효과로 1억 원 이상이 추가</strong>돼요. 이게 "돈이 돈을 버는" 복리의 마법이에요. 시작이 빠를수록, 기간이 길수록 이 효과는 눈덩이처럼 커져요.</p>
+    </div>
+
+    <div class="card" style="margin-top:16px;padding:20px 24px;">
+      <h4 style="font-size:15px;font-weight:700;color:var(--charcoal);margin-bottom:10px;">📊 투자 금액별 시뮬레이션 (연 8%, 20년)</h4>
+      <table class="compare-table">
+        <thead>
+          <tr><th>매월 투자액</th><th>내가 넣은 원금</th><th>20년 후 예상 자산</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>10만 원</td><td>2,400만 원</td><td><strong>약 5,890만 원</strong></td></tr>
+          <tr><td>20만 원</td><td>4,800만 원</td><td><strong>약 1억 1,779만 원</strong></td></tr>
+          <tr><td><strong>30만 원</strong></td><td><strong>7,200만 원</strong></td><td><strong>약 1억 7,669만 원</strong></td></tr>
+          <tr><td>50만 원</td><td>1억 2,000만 원</td><td><strong>약 2억 9,448만 원</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warning-box" style="margin-top:16px;">
+      <h4>⚠️ 꼭 알아둘 점</h4>
+      <p>연 8%는 S&P500 지수의 장기 평균 수익률(배당 재투자 포함)을 참고한 <strong>예시 수치</strong>예요. 실제 투자에서는 해마다 수익률이 달라지고, 마이너스가 나는 해도 있어요. 세금(배당소득세 15.4%)과 수수료를 고려하면 실제 수령액은 줄어들어요. 이 계산은 "꾸준히 오래 투자하면 복리가 이렇게 강력하다"는 원리를 보여주기 위한 것이지, 확정 수익을 보장하지 않아요.</p>
+    </div>
+
+    <p style="text-align:center;margin-top:28px;font-size:16px;font-weight:700;color:var(--forest);">오늘 시작하는 작은 한 걸음이 아이의 미래를 바꿔요. 🌱</p>
+  </div>
+</div>
+
+<div class="footer">
+  <p>본 콘텐츠는 정보 제공 목적이며, <strong>투자 권유가 아닙니다.</strong><br>
+  모든 투자에는 원금 손실의 위험이 있으며, 투자 판단과 결과의 책임은 투자자 본인에게 있습니다.<br>
+  구체적인 투자 결정 전 전문가 상담을 권장합니다.</p>
+</div>
+
+<script>
+document.querySelectorAll('.accordion-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('open');
+    const body = btn.nextElementSibling;
+    body.classList.toggle('open');
+  });
+});
+</script>
+</body>
+</html>
